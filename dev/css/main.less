@@ -1,0 +1,76 @@
+@charset 'UTF-8';
+/* variable */
+@nice-blue: #5b83ad;
+@light-blue: @nice-blue + #111;
+
+#header { color: @light-blue; }
+
+/* no order and  variable cascade*/
+@varTest: "fnord";
+@fnord: "I am fnord.";
+@var: "fnord";
+
+@var1: @@var;
+@var2: @@varTest;
+
+#head { color: @var1; }
+#head1 { color: @var2; }
+
+/* nesting */
+@varNesting: 0;
+.class1 {
+	@varNesting: 1;
+	.class {
+		@varNesting: 2;
+		three: @varNesting;
+		@varNesting: 3;
+	}
+	one: @varNesting;
+}
+
+/* Mixins */
+.bordered { 
+	border-top: dotted 1px black;
+	border-bottom: solid 2px block;
+}
+
+#menu a {
+	color: #111;
+	.bordered;
+}
+
+/* Mixins with parameter */
+.border-radius (@radius: 5px) {
+	border-radius: @radius;
+	-moz-bordrer-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+
+#header {
+	.border-radius(4px);
+}
+#footer {
+	.border-radius;
+}
+
+.mixin (@a) when (lightness(@a) >= 50%) {
+	background-color: black;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+	background-color: white;
+}
+
+.mixin (@a) {
+	color: @a;
+}
+
+.class1 {.mixin(#ddd)}
+.class2 {.mixin(#555)}
+
+.class3 {.mixin(#333)}
+
+.class4 {.mixin(#111)}
+
+.class5 {.mixin(#222)}
+
+.class6 {.mixin(#444)}
