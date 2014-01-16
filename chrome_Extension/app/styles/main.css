@@ -3,3 +3,9 @@
 html {
     /* Defaults css for cssmin process */
 }
+table{
+	width:400px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table td{vertical-align: top; }
