@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "RB_helper",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "the report builder develop helper",
+    "description": "The description of the application"
+  }
+}

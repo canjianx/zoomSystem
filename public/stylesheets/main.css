@@ -1,9 +1,11 @@
-@charset 'UTF-8';
-/* variable */
+/*@import "variable.less"*/
 #header {
   color: #6c94be;
 }
 /* no order and  variable cascade*/
+#head0 {
+  color: "I am fnord.";
+}
 #head {
   color: "I am fnord.";
 }

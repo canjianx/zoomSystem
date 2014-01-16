@@ -5,7 +5,11 @@ module.exports = function (grunt) {
             // 编译
             compile: {
                 files: {
-                    'public/stylesheets/main.css': 'dev/css/main.less'
+                    expand: true,
+                    cwd: 'dev/css/',
+                    src: ['*.less'],
+                    dest: 'public/stylesheets/',
+                    ext: '.css'
                 }
             },
             // 压缩
